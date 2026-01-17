@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificate Verification</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- TOP INSTRUCTIONS -->
+    <p class="instructions">
+      Enter certificate number in the field below and<br>
+      press verify button.<br>
+      You can also scan the certificate QR code with<br>
+      your smart phone.
+    </p>
+
+    <!-- INPUT + BUTTON -->
+    <div class="verify-box">
+      <input type="text" id="certInput" placeholder="Certificate Number">
+      <button class="verify-btn" onclick="verifyCert()">Verify</button>
+    </div>
+
+    <!-- RESULT BOX -->
+    <div class="result-box" id="resultBox">
+      <div class="left-status">
+        <span class="valid">VALID<br>CERTIFICATE</span>
+      </div>
+
+      <div class="right-details">
+        <div class="item">
+          <span>Graduate Name</span>
+          <strong>TUYISHIMIRE Prosper</strong>
+        </div>
+
+        <div class="item">
+          <span>Index number</span>
+          <strong>571019MPC0062024</strong>
+        </div>
+
+        <div class="item">
+          <span>Examination Authority</span>
+          <strong>NESA</strong>
+        </div>
+
+        <div class="item">
+          <span>School</span>
+          <strong>NYAMATA HIGH SCHOOL</strong>
+        </div>
+
+        <div class="item">
+          <span>Exam Year</span>
+          <strong>2023/2024</strong>
+        </div>
+
+        <div class="item">
+          <span>Mention</span>
+          <strong>PASS</strong>
+        </div>
+
+        <div class="item">
+          <span>Aggregate</span>
+          <strong>93</strong>
+        </div>
+      </div>
+    </div>
+
+    <p class="help">
+      for questions and assistance please contact NESA
+    </p>
+
+    <div class="footer">
+      <span>Contact us</span>
+      <span>www.nesa.gov.rw</span>
+    </div>
+
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    function verifyCert() {
+      const validCertificates = ["A2231497"]; // Add more if needed
+      const input = document.getElementById("certInput").value.trim();
+
+      if (validCertificates.includes(input)) {
+        // Reload page simulation
+        window.location.reload(); // reloads page, result stays visible
+      } else {
+        alert("Invalid Certificate Number");
+      }
+    }
+  </script>
+
+</body>
+  </html>
